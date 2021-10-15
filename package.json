@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node node_modules/prompt-sync/test.js",
     "start": "node index.js",
     "account": "node account.js",
     "atm": "node atm.js"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pedrobando/startNode#readme",
   "dependencies": {
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "prompt-sync-history": "^1.0.1"
   }
 }
