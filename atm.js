@@ -1,15 +1,15 @@
-const account = require('./account');
-
 function getBalance(){
- return {balance};
+ const { bal } = require('./account');
+ return bal;
 }
 
-function withdraw(amount, getBalance()){
-    return getBalance() - amount;
+function withdraw(amount, getBalance, newBalance){
+    newBalance += getBalance() - amount;
+    return newBalance;
 
 }
 
-function deposit(amount, getBalance()){
+function deposit(amount, getBalance){
     return getBalance() + amount;
 }
 
@@ -22,4 +22,11 @@ function validatePin(inputPin, pin){
         return false;
     }
 
+}
+
+module.exports = {
+    getBal:     getBalance,
+    withdraw:   withdraw,
+    deposit:    deposit,
+    valPin:     validatePin
 }
