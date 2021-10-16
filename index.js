@@ -24,13 +24,13 @@ function displayOptions(balance){
             console.log(`\n Your balance is ${money.format(balance)} \n`);
             return displayOptions(balance);
         case 'deposit':
-            console.log(" \n How much money would you like to deposit? ")
+            console.log(" \n There is a $1.75 charge per transaction. \n How much money would you like to deposit? ")
             let depositAmount = parseInt(PromptSync());
             balance = deposit(depositAmount, balance);
             console.log(`\n Deposit successful. Your balance is now ${money.format(balance)}`);
             return displayOptions(balance);
         case 'withdraw':
-            console.log("\n How much money would you like to withdraw?");
+            console.log("\n There is a $1.75 charge per transaction. \n How much money would you like to withdraw?");
             let withdrawAmount = parseInt(PromptSync());
             balance = withdraw(withdrawAmount, balance);
             console.log(`\nWithdrawal successful. You balance is now ${money.format(balance)}`);

@@ -1,5 +1,6 @@
 const PromptSync = require('prompt-sync')();
 const { bal, pin } = require('./account');
+let {charges, fee}= require(`./wallet`);
 
 function getBalance(){
     balance = bal;
@@ -7,13 +8,15 @@ function getBalance(){
 }
 
 function withdraw(amount, balance){
-    newBalance = balance - amount;
+    newBalance = balance - amount - fee;
+    charges += fee;
     return newBalance;
 
 }
 
 function deposit(amount, balance){
-    newBalance = balance + amount;
+    newBalance = balance + amount - fee;
+    charges += fee;
     return newBalance;
 }
 
