@@ -28,8 +28,5 @@ function displayOptions(balance){
             return displayOptions(balance);
         case 'exit':
             return valPin();
-        default:
-            displayOptions(balance);
-            break;
     }
 }
