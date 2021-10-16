@@ -1,8 +1,9 @@
 const PromptSync = require('prompt-sync')();
 const { bal, pin } = require('./account');
 
-function getBalance(bal){
- return bal;
+function getBalance(){
+    balance = bal;
+ return balance;
 }
 
 function withdraw(amount, balance){
@@ -16,13 +17,12 @@ function deposit(amount, balance){
     return newBalance;
 }
 
-function validatePin(pin, inputPin){
+function validatePin(inputPin){
     if(pin == inputPin){
         return true
     }
     else{
-        console.log("Invalid pin. Please try again");
-        return validatePin(pin, inputPin);
+        return false;
     }
     
 }
